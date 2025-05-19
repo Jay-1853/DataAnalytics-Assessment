@@ -32,9 +32,9 @@ SELECT
     cten.tenure_months,
     ct.total_transactions,
     ROUND(
-        ((ct.total_transactions / cten.tenure_months) * 12 * (ct.avg_transaction_value * 0.001)) / 100, -- Calculates CLV and converts the kobo values to Naira. Note: profit_per_transaction is 0.1% of the transaction value 
+        ((ct.total_transactions / cten.tenure_months) * 12 * (ct.avg_transaction_value * 0.001)) / 100, 
         2
-    ) AS estimated_clv
+    ) AS estimated_clv -- Calculates CLV and converts the kobo values to Naira. Note: profit_per_transaction is 0.1% of the transaction value
 FROM
     customer_transactions ct
 JOIN
